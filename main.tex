@@ -1,0 +1,291 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[
+    a4paper, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, marginparwidth=1.75cm
+]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage[
+    colorlinks=true, 
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[
+    tocskip=0.1\baselineskip, skip=0.7\baselineskip, parfill
+]{parskip}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% Kopf- und Fußzeile
+\pagestyle{fancy}
+\fancyhf{}
+%Kopfzeile mittig mit Kaptilname
+\fancyhead[C]{\nouppercase{\leftmark}}
+%Fußzeile links bzw. innen
+\fancyfoot[L]{\versuchsname}
+%Fußzeile mittig (Seitennummer)
+\fancyfoot[R]{\thepage}
+\renewcommand{\footrulewidth}{0.35pt}
+
+% Hilfs-Commands für Gleichungen
+\newcommand{\widespace}{\enspace}
+\newcommand{\wideeq}{\widespace = \widespace}
+\newcommand{\wideneq}{\widespace \neq \widespace}
+\newcommand{\wideapprox}{\widespace \approx \widespace}
+\newcommand{\wideleq}{\widespace \leq \widespace}
+\newcommand{\widegeq}{\widespace \geq \widespace}
+\newcommand{\widele}{\widespace \le \widespace}
+\newcommand{\widege}{\widespace \ge \widespace}
+\newcommand{\wideiff}{\widespace \iff \widespace}
+\newcommand{\wideimplies}{\widespace \implies \widespace}
+\newcommand{\pd}[2]{
+    \frac{\partial #1}{\partial #2}
+}
+\newcommand{\result}[2]{
+    #1 \, \text{#2}
+}
+
+% Markieren von verwendetem Code
+\definecolor{codebg}{RGB}{230, 240, 255}
+\newcommand{\coderef}[1]{
+    \text{
+        \enspace
+        \footnotesize
+        \colorbox{codebg}{\texttt{#1()}}
+    }
+}
+
+% Formatieren von Code im Anhang
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+\lstset{style=mystyle}
+
+% Formatierung von Absätzen
+\renewcommand{\baselinestretch}{1.2}
+
+\allowdisplaybreaks
+
+% Allgemeine Infos
+\newcommand{\versuchsname}{
+    NMR-A - Kernspinresonanz
+}
+\newcommand{\githuburl}{
+    \url{https://github.com/WeinSim/P3B}
+}
+
+% Titel und Autor
+\title{\versuchsname}
+\author{Simon Weinzierl, Yannic Werner}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+    Physikalisches Fortgeschrittenenpraktikum P3B
+    nach der Studienordnung für Studienbeginn bis WS 2022/23
+\end{center}
+
+\vspace*{6cm}
+
+\begin{center}
+    \footnotesize
+    Alle Teile dieses Dokuments (Vorbereitung, Protokoll, Auswertung) wurden
+    von beiden Teilnehmern in gleichen Teilen und ohne fremde Hilfe bearbeitet.
+    Sofern fremde Quellen verwendet wurden, sind diese angegeben.
+
+    Der \LaTeX-Code ist auf GitHub unter \githuburl verfügbar.
+    
+    © Alle Rechte vorbehalten.
+\end{center}
+
+ % LMU-Siegel
+\AddToShipoutPicture*{
+    \put(315,0){
+        \parbox[b][5cm]{5cm}{
+            \includegraphics[width=10cm]{Abbildungen/Siegel_LMU.pdf}
+        }
+    }
+}
+
+\newpage
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+\newpage
+
+% Literatur
+\bibliographystyle{alpha}
+\bibliography{literatur}
+
+\newpage
+
+\section{Vobereitung}
+
+\subsection{Physikalischer Hintergrund}
+
+
+\newpage
+
+\section{Veruschsablaufplan}
+
+\subsection{Benötigte Materialien}
+    \begin{enumerate}[label=\arabic*.]
+        \item Eins
+        \item Zwei
+    \end{enumerate}
+
+\newpage
+
+\subsection{Teilversuch 1: Bragg-Reflexion von Röntgenstrahlung des Molybdän an einem NaCl-Eiskristall}
+\begin{enumerate}[label = (\Roman*)]
+    \item Ziel: ...
+    
+    \item Versuchsmethode: ...
+    
+    \item Versuchsskizze:
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Bild}
+        \caption{Versuchsskizze Teilversuch 1}
+        \end{figure}
+
+    \item Planung der Durchführung
+        \begin{itemize}
+            \item eins
+            \item zwei
+        \end{itemize}
+
+    \item Vorüberlegungen zur Durchführung \& Auswertung
+        \begin{itemize}
+            \item eins
+            \item zwei
+        \end{itemize}
+    
+\end{enumerate}
+
+\newpage
+
+\subsection{Teilversuch 2: Energiespektrum einer Röntgenröhre in Abhängigkeit der Spannung}
+\begin{enumerate}[label = (\Roman*)]
+    \item Ziel: 
+    
+    \item Versuchsmethode: 
+    
+    \item Versuchsskizze:
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Bild}
+        \caption{Versuchsskizze Teilversuch 2}
+        \end{figure}
+
+    \item Planung der Durchführung
+        \begin{itemize}
+           \item eins
+           \item zwei
+        \end{itemize}
+
+    \item Vorüberlegungen zur Durchführung \& Auswertung
+        \begin{itemize}
+            \item eins
+            \item zwei
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\newpage
+
+\section{Versuchsprotokoll}
+
+Auf den folgenden Seiten befindet sich das eingescannte Versuchsprotokoll.
+Alle Daten wurden selbst gemessen. Sofern fremde Hilfe benutzt wurde,
+wurde sie klar gekennzeichnet.
+
+Messunsicherheiten wurden angegeben und folgend in der Auswertung verwendet.
+Alle weiteren Rechnungen und Analysen finden in der Versuchsasuwertung statt.
+
+\includepdf[pages={...}, pagecommand={\thispagestyle{scrheadings}}, frame=true]{[Name.pdf]]}
+
+\newpage
+
+\section{Auswertung}
+
+    \subsection{Teilversuch 1: Bragg-Reflexion von Röntgenstrahlung des Molybdän an einem NaCl-Eiskristall}
+
+    \newpage
+
+\section{Anmerkung: Graphische Auswertung und Fehlerfortpflanzung mit Python-Code}
+
+Alle Berechnungen inkl. Fehlerbestimmung wurden mit einem selbstgeschriebenen
+Python-Skript durchgeführt, um uns die Arbeit zu erleichtern und Fehler zu
+vermeiden. Alle Ergebnisse, die auf diese Weise zustande gekommen sind,
+sind entsprechend mit einem \colorbox{codebg}{blauen Hintergrund} gekennzeichnet;
+s. folgendes Beispiel:
+\[
+    F \wideeq ma \wideeq \result{20}{kg} \cdot 9,81 \, \frac{\text m}{\text s^2}
+    \wideeq \result{(19,62 \pm 0,5)}{N} \coderef{tv1}
+\]
+Dies soll bedeuten, dass die Berechnung des Wertes und der Unsicherheit von der
+Python-Funktion namens \verb|tv1| durchgeführt wird.
+Die Unsicherheit wird mithilfe der Gauß'schen Fehlerfortpflanzung berechnet.
+Außerdem wird das Python-Package \texttt{matplotlib} zum Erstellen
+von Graphen verwendet.
+
+Der verwendete Code ist sowohl auf GitHub verfügbar (\githuburl) als auch auf den
+folgenden Seiten zu finden und kann mit dem Befehl \texttt{python Main.py}
+ausgeführt werden. Für eine genauere Beschreibung des Codes siehe die README-Datei
+auf GitHub sowie die Kommentare im Code.
+(Manche Sonderzeichen im Code (ä, ö, ü, $\Delta$, etc.) werden von \LaTeX nicht
+richtig erkannt, deswegen kann der Code auf den nachfolgenden Seiten an einigen
+Stellen unvollständig erscheinen. Auf GitHub wird aber alles richtig angezeigt.)
+
+\newpage
+
+
+\verb|Main.py|:
+\lstinputlisting[language=Python]{Code/Main.py}
+\newpage
+
+\verb|Expressions.py|:
+\lstinputlisting[language=Python]{Code/Expressions.py}
+\newpage
+
+Output:
+\lstinputlisting{Code/Output.txt}
+
+\end{document}
