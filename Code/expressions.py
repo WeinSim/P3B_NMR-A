@@ -2,8 +2,9 @@ import math
 
 # Diese Datei enthält verschieden Klassen um arithmetische Operationen zu
 # repräsentieren. Zu den Operationen zählen Addition (Add), Subtraktion (Sub),
-# Multiplikation (Mul), Division (Div), Exponentiation (Pow), Sinus (Sin),
-# Cosinus (Cos) und der Zehnerlogarithmus (Log10).
+# Multiplikation (Mult), Division (Div), Exponentiation (Pow),
+# die Exponentialfunktion (Exp) Sinus (Sin), Cosinus (Cos) und der
+# Zehnerlogarithmus (Log10).
 # Diese Operationen bilden die Knoten der entstehenden Syntaxbäume.
 # Jede Instanz besitzt ein bzw. zwei arithmetische Ausdrücke als "Kinder".
 # Die Blätter bilden Konstanten (Const) und Variablen (Var).
@@ -151,6 +152,26 @@ class Pow:
     @staticmethod
     def priority():
         return 1
+
+class Exp:
+
+    def __init__(self, child1):
+        self.child1 = child1
+
+    def eval(self):
+        return math.exp(self.child1.eval())
+
+    def derivative(self, var):
+        return Mult(Exp(self.child1), self.child1.derivative(var))
+
+    def __str__(self):
+        c1 = self.child1.__str__()
+        return f"exp({c1})"
+
+    def isEqual(self, other):
+        if not isinstance(other, Exp):
+            return False
+        return self.child1.isEqual(other.child1)
 
 class Sin:
 
