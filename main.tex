@@ -16,8 +16,10 @@
     urlcolor=blue
 ]{hyperref}
 \usepackage{graphicx}
+\usepackage{multirow}
 \usepackage{amssymb}
 \usepackage{float}
+\usepackage{siunitx} \sisetup{locale = DE, uncertainty-mode = separate}
 \usepackage{pdfpages}
 \usepackage{multirow}
 \usepackage[
@@ -52,18 +54,11 @@
 \newcommand{\pd}[2]{
     \frac{\partial #1}{\partial #2}
 }
-\newcommand{\result}[2]{
-    #1 \, \text{#2}
-}
 
 % Markieren von verwendetem Code
 \definecolor{codebg}{RGB}{230, 240, 255}
-\newcommand{\coderef}[1]{
-    \text{
-        \enspace
-        \footnotesize
-        \colorbox{codebg}{\texttt{#1()}}
-    }
+\newcommand{\coderef}[1]{%
+    \text{\footnotesize \colorbox{codebg}{\texttt{#1()}}}%
 }
 
 % Formatieren von Code im Anhang
@@ -86,9 +81,10 @@
     numbersep=5pt,                  
     showspaces=false,                
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=4
 }
+
 \lstset{style=mystyle}
 
 % Formatierung von Absätzen
@@ -152,9 +148,326 @@
 
 \newpage
 
+
 \section{Vobereitung}
 
 \subsection{Physikalischer Hintergrund}
+
+\subsubsection{Magnetisches Moment}
+
+\cite{chemie.de}
+
+Das magnetische Moment ist in der Physik ein Maß für die Stärke eines Magnetfeldes. Das magentische Moment, auch magnetischse Dipolmoment genannt, ist somit neben dem elektrischen Moment eine weitere Größe in der Stromverteilung der Physik.
+
+Möchte man das magnetische Moment mathematisch ausdrücken, so lässt sich folgenden Formel aufstellen:
+
+\[
+    \vec{m} \wideeq I \, \vec{A}
+    \wideeq \frac{1}{2} \sum_i q_i \, \vec{r}_i \times \vec{v}_i
+    \wideeq \frac{1}{2} \int \mathrm{d}^3 r \,
+    \left[ \vec r \times \vec j (\vec r) \right]
+\]
+
+Aus der allgemeinen Formel (Produkt aus Stromstärke und Flächenvektor), lässt sich also die Formel zur exakten Berechnung aufstellen.
+
+Möchte man nun das magentische Moment in verschiedenen Situationen überprüfen, so kann man die aufgestelle Formel noch weiter präzisieren. Hierfür werden im Folgenden drei konkrete Fäller genauer betrachtet:
+
+\begin{enumerate}
+    \item \textit{Ebene Leiteschleife.} \quad Da für eine geschlossene Leiterschleife
+    
+    \[
+        \vec{j} \, \mathrm{d}^3 r \wideeq I \, \mathrm{d} \vec{r}
+    \]
+    
+    gilt, folgt für das magenetische Moment:
+
+    \[
+        \vec{m}
+        \wideeq \frac{I}{2} \int_C \left( \vec{r} \times \mathrm{d} \vec{r} \right)
+        \wideeq I \cdot \vec{A}
+        \wideeq I A \vec{e}
+    \]
+
+    Wie ersichtlich, genügt es also, den Zusammenhang aus Stromfläche und Querschnittsfläche mit dem Einheitsvektor zu multiplizieren.
+
+    \item \textit{Stromdurchflossene lange Spule.} \quad
+    Hierbei spiel die Windungszahl der Spule eine zentrale Rolle:
+
+    Die Formel des magentischen Moments lässt sich in diesem Fall gsnz einfach erweitern: die Windungszahl wird einfach mit dem Produkt aus Stromstärke und Fläche multipliziert. Somit erhält man:
+
+    \[
+        m \wideeq nIA
+    \]
+
+    Sofern man nun Kenntnis über das magnetische Moment des Dipols hat, lässt sich das auf den Körper einwirkende Magentfeld mittels
+
+    \[
+        \vec{M} \wideeq \vec{m} \times \vec{B}
+    \]
+
+    berechnen. Hierbei muss man jedoch aufpassen, da alle Größen vektorielle Größen sind, also die Richtung ein zentrale Rolle spielt!
+
+    \item \textit{Teilchen.} \quad
+    Für ein Teilchen lässt sich das magenetische Moment $\mu$
+    \[
+        \vec{\mu} \wideeq g \, \frac{q}{2m} \, \vec{S}
+    \]
+
+     mit $g$ als gyromanischen Faktor und $\vec{S}$ als Spin, welcher erst in Kapitel 1.1.2 genauer betrachtet wird.
+
+    Betrachtet man ausschließlich ein Elektron, so lässt sich die Formel umstellen zu:
+
+    \[
+        \mu_B \wideeq \frac{e\hbar}{2m_e}
+    \]
+
+    Folgend nun eine Herleitung des Ausdrucks für das magentische Moment eines Teilches aus der allgemeinen Definition für eine Schleife:
+
+    \[
+        \vec{\mu}
+        \wideeq \frac 1 2 \int \mathrm{d}^3 r \,
+        \left[ \vec r \times \vec j (\vec r) \right]
+    \]
+
+    mit
+
+    \[
+        \vec j (\vec r, t) \wideeq q \vec v (t)
+        \delta^{(3)} \left( \vec r - \vec r (t) \right)
+    \]
+
+    Darus folgt: 
+
+    \[
+        \vec{\mu}(t) \wideeq \frac{q}{2}\,\vec{r}(t)\times \vec{v}(t)
+    \]
+
+    Mittelt man dies nun für eine gebundene, stationäre Bewegung über die Zeit:
+
+    \[
+        \langle \vec{\mu} \rangle
+        \wideeq \frac 1 T \int_0^T \vec{\mu}(t) \, \mathrm{d}t
+        \wideeq \frac{q}{2T} \int_0^T \vec{r}(t) \times \vec{v}(t) \, \mathrm{d}t
+        \wideeq \frac{q}{2m} \, \vec{L}
+    \]
+
+    Speziell in der NMR-Spektroskopie, also für Atomkerne, schreibt man die Formel für das magentische Moment als:
+
+    \[
+        \vec{\mu} \wideeq \frac{q}{e} \gamma \vec{S}
+    \]
+
+    mit $\frac{q}{e}$ als Elementraladung und $\gamma$ als gyromagentisches Verhältnis, definiert als:
+
+    \[
+        \gamma \wideeq \frac{g\mu_{B}}{\hbar}
+    \]
+    
+\end{enumerate}
+
+\subsubsection{Spin}
+
+\cite{rptu}
+
+\cite{chemie.de_2}
+
+Der Spin eines Teilchens ist wie die Masse oder die Ladung eine fundamentale
+Eigenschaft. Er hat eine große Relevanz für die Struktur von Atomen und Molekülen.
+Zudem ist der Spin der Grund für die Entstehung von Magnetfeldern,
+beziehungsweise die Basis von Magnetismus.
+Nun gibt es zwei Möglichkeiten, wie man ein Teilchen betrachtet:
+
+\begin{enumerate}
+    \item Teilchen als Kreisel, die sich drehen: hierbei betrachtet man die Teilchen als System, welches sich um seine eigene Achse dreht. Somit kann jedem Teilchen ein Drehimpuls zugeordnet werden. Diese Vorstellung hilf der Veranschaulichung, entspricht jedoch nicht der Realität.
+    \item Teilchen als winzige Magnete: da der Spin ein Magnetfeld zur Folge hat, kann man sich die Teilchen modellhaft als winizige Stabmagneten vortsellen. Dabei können sich die Teilchen aber nicht in jede Richtung drehen wie ein Stabmagnet, da die Ausrichtung der quantenmechanischen Momente gequantelt ist. Elektronen können hier zum Beispiel lediglich die zwei Zustände $\left| \uparrow \right>$ (``Spin up'') und $\left| \downarrow \right>$ (``Spin down'') einnehmen.
+
+\end{enumerate}
+
+Da wir nun eine korrekte Vorstellung über den Spin haben, wollen wir  im Folgenden noch einige Eigenschaften des Spins genauer betrachten:
+\begin{enumerate}
+    \item Spinquantenzahl und Spineigenzustand:
+        \begin{itemize}
+            \item Die Eigenzustände und -werte lassen sich analog zum Drehimpuls bestimmten. Hierfür muss folgende Eigenwertgleichung gelöst werden:
+            \[
+                S^2 \Psi \wideeq s (s + 1) \hbar^2 \Psi \to S_z \Psi = s_z \hbar \Psi
+            \]
+            mit $\Psi$ als Zustandsvektor.
+            \item $S^2$ ist dabei definiert als
+            \[
+                S^2 = S_X^2+S_Y^2+S_Z^2
+            \]
+            mit $S_{z}$ als Spinoperatoren und $s_{z}$ als Spinquntenzahlen.
+            \item Die möglichen $s_z$-Werte sind gegen durch
+            \[
+                -s,-s+1-...,s-1,s
+            \]
+            Also sind für jedes Spinkomponente ($s_x$, $s_y$, $s_z$) $2s+1$ verschiedene Werte möglich.
+        \end{itemize}
+    \item Spin als Erhlatungsgröße
+        \begin{itemize}
+            \item Spinquantenzahl eines Elementarteilchens ist unveränderlich; Spinausrichtung jedoch nicht
+            \item Gesamtspin ist keine Erhaltungsgröße; aber Gesamtdrehimpuls (werden Reaktionen in der Atomphysik betrachtet, so ist die Summe der Eigendrehimpulswerte vor und nach der Reaktion die gleiche)
+        \end{itemize}
+    \item Spin und magentisches Moment
+        \begin{itemize}
+            \item Spin eines Elementarteilchens kann über das magentische Moment gemessen werden
+            \item Über magnetisches Moment tritt Spin in Wechselwirkung mit magnetischen Feldern (die magnetische Energie eines Teilchens ist von dessen Orientierung relativ zum Magnetfeld abhängig)
+            \item Atom: Wecheslwirkungen zwischen Elektronen und Atomkern und zwischen Elektronen untereinander (Ausnutzen in Kernspinresonanz)
+        \end{itemize}  
+    \end{enumerate}
+
+\subsubsection{Spinpräzession}
+
+\cite{sdw}
+
+\cite{tech}
+
+Da nun der Spin und seine Eigenschaften verstanden wurden, wollen wir im Folgenden die Spinpräzession genauer betrachten.
+
+Spinpräzession beschreibt hierbei die Präzessionsbewegung des Spins eines Elementarteilchens (Elektron) in einem magnetischen Feld. Dabei hat der Spin nur zwei Möglichkeiten für dessen Wert, gegeben durch die magentischen Quantenzahle $m_s=\pm\frac{1}{2}$. Folglich nimmt der Spindrehimpuls die Werte $s_z=\pm\frac{1}{2}\hbar$ an.
+
+Dieses Phänomen spielt eine zentrale Rolle beim Aufbau der Atom (Larmor-Präzession). Folgende Skizze soll die Präzession des Elektronenspins um die Quantisierungsachse $z$ veranschaulichen:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Abbildungen/Spinpräzession.jpeg}
+    \caption{Präzession des Elektronenspins um die Quantisierungsachse $z$}
+\end{figure}
+
+\subsubsection{Erwartungswert des Spins}
+
+\cite{dm}
+
+\cite{tss}
+
+Der Erwartungswert beschreibt den Wert, welcher der Mittelwert über viele identische Messungen wäre. Dabei muss der Erwartungswert selbst jedoch kein möglicher Messwert sein. Für jede Observable ist der Erartungwert gegen durch: 
+\[
+    \langle A \rangle = \text{Tr}(\rho A)
+\]
+wobei $\rho$ gegeben ist als $\rho = | \psi \rangle \langle \psi |$.
+
+Möchte man nun den Erwartungswert in der Dynmaik betrachten, so gilt im Magentgelf $B$ mit dem Hamiltonoperator $H=-\gamma B \cdot S$:
+\[
+    \frac{d}{dt} \langle S \rangle \wideeq \gamma \langle S \rangle \times B
+\]
+Diese Gleichung beschreibt eine Präzessionsbewegung des Erwartungswert des Spins um die Magnetfeldachse.
+
+Jedoch muss man für eine Messung entlang einer Einheitsrichtung folgendes beachten, bevor man die Berechnung durchführt bei Spins ($\frac{1}{2}$):
+
+\[
+    \langle S_{\hat{n}} \rangle \wideeq \frac{\hbar}{2} r\cdot \hat{n}
+\]
+
+\subsubsection{Kernmagneton $\mu_n$}
+
+Das Kernmagneton $\mu_n$ wird in der Kern- und Teilchenphysik als Einheit für magnetische Momente verwendet. Dabei ist das Kernmagneton definiert als: 
+    \[
+        \mu_n \wideeq \frac{e\hbar}{2m_p} \wideeq \frac{m}{m_p}\mu_B
+    \]
+Wie ersichtlich betrachtet man hier nun Protonen und keine Elektronen ($m_p$).
+
+Man verwendet das Kernmagneton also analog zum Bohrschen Magenton für Elektronen. Durch den enormen Masseunterschied von Elektronen und Kern/Protonen sind deren magentische Momente viel kleiner als die von Elektronen. 
+
+\subsubsection{$g$-Faktor}
+
+\cite{Dem}
+
+Zwischen dem Bahndrehmoment $\mathbf l$ und dem magnetischen Moment $\boldsymbol \mu_l$
+eines Elektrons besteht der Zusammenhang
+\[
+    \boldsymbol \mu_l
+    \wideeq - \frac{\mu_B}{\hbar} \mathbf l
+    \wideeq - \frac{e}{2 m_e} \mathbf l,
+\]
+welcher dem klassisch erwarteten Wert eines Teilchens mit Ladung $-e$, Masse $m_e$
+und Bahndrehimpuls $\mathbf l$ entspricht.
+
+Zwischen dem Spindrehmoment $\mathbf s$ und dem dadurch erzeugten magnetischen Moment
+$\boldsymbol \mu_s$ besteht ein angloger Zusammenhang, jedoch mit einer
+unterschiedlichen Proportionalitätskonstante:
+\[
+    \boldsymbol \mu_s
+    \wideeq - g_s \frac{\mu_B}{\hbar} \mathbf l
+    \wideeq - g_s \frac{e}{2 m_e} \mathbf l
+\]
+Hier ist $g_s \approx 2$ der $g$-Faktor des Elektrons. Der Spindrehimpuls
+trägt also ungefähr doppelt so viel zum gesamten magnetischen Moment
+$\boldsymbol \mu_j = \boldsymbol \mu_l + \boldsymbol \mu_s$ bei wie der Bahndrehimpuls.
+
+Befindet sich ein Atom in einem äußeren elektrischen Feld $\mathbf B$,
+dann gilt für den Erwartungswert $\langle \mu_j \rangle$
+des magnetischen Moments:
+\[
+    \langle \mu_j \rangle
+    \wideeq - g_j \frac{\mu_B}{\hbar} | \boldsymbol \mu_j |
+    \wideeq - g_j \frac{e}{2 m_e} | \boldsymbol \mu_j |
+\]
+Hier wurde der $g$-Faktor entsprechend angepasst:
+\[
+    g_j \wideeq 1 + \frac{j (j + 1) + s (s + 1) - l (l + 1)}{2 j (j + 1)}
+\]
+Daraus folgt, dass sich unterschiedliche Energieniveaus unter dem Einfluss
+eines (schwachen) externen magnetischen Feldes unterschiedlich stark aufspalten.
+
+
+\subsubsection{Auswahlregeln}
+
+\cite{Dem}
+
+Nicht alle Übergänge zwischen zwei Energiezuständen in einem Atom können durch
+elektromagnetische Strahlung angeregt werden. Neben der Energieerhaltung
+gibt es weitere Regeln für Übergänge, die aufgrund von Symmetrien oder anderen
+Erhaltungsgrößen zustande kommen.
+
+Für optische Dipolübergänge lauten die Auswahlregeln:
+\begin{align*}
+    \Delta m &\wideeq \begin{cases}
+        \pm 1 \quad &\text{für zirkular polarisiertes Licht} \\
+        0 \quad & \text{für linear polarisiertes Licht}
+    \end{cases} \\
+    \Delta l &\wideeq \pm 1 \\
+    \Delta S &\wideeq 0 \\
+    \Delta J &\wideeq 0, \pm 1 \quad \text{aber } J = 0 \not \to J = 0
+\end{align*}
+
+Für optische Quadrupolübergänge gelten andere Auswahlregeln, beispielsweise
+gilt hier $\Delta l = 0, \pm 2$.
+
+
+\subsubsection{Grundiwssen des P2-Versuchs OSZ (s. Durchführung)}
+
+    \begin{enumerate}
+        \item Teilversuch 1: Belastungsabhängigkeit zweier Spannungsquellen
+            \begin{itemize}
+                \item Jede Spannungsquelle hat einen Innenwiderstand. Dadurch sinkt die Klemmspannung mit zunehmendem Laststrom
+                \item Galvanische Zelle belasten und dann Strom und Spannung in mehreren Stufen messen
+                \item Zuerst und am Ende der Leerlaufspannung bestimmen
+            \end{itemize}
+        \item Teilversuch 2: Bestätigung des Ohmschen Gesetzes
+            \begin{itemize}
+                 \item FÜr Ohmsche Leiter gilt $I \alpha U$
+                \item Widerstand ist konstant
+            \end{itemize}
+        \item Teilversuch 3: Spannungsabfall und Potentiometer
+            \begin{itemize}
+                \item Nach dem Ohmschen Gesetz fällt an einem Leiterstück die Spannung proportional zur Länge ab
+                \item Potentiometer dienen als Spannungsleiter
+            \end{itemize}
+        \item Teilversuch 4: Spannungsmessung durch Komponenten
+            \begin{itemize}
+                \item Kompensationsmessung verhindert Belastung der Spannungsquelle
+                \item Leerlaufspannung exakt messen
+            \end{itemize}
+        \item Zusammenfassung und Zusammenhänge mit NMR
+            \begin{itemize}
+                \item Zeigen Zusammenhang zwischen Spannung, Strom, Widerstand und Energierehaltung von elektrischen Stromkreisen
+                \item NMR-Geräte arbeiten mir komplexen elektrischen Schaltungen (Spulen erzeugen das B-Feld)
+                \item Ohmsches Gesetz und Sapannungsabfälle sind entscheidend für die Signalstärke und Rauschunterdrückung
+                \item Das Potentiometer/Spannungsteiler-Prinzip steckt in der Feinabstimmung von NMR-Geräten
+                \item Die Kompensationsmessung ist direkt verwandt mit der empfindlichen Spannungsmessung
+                \item Die Kirchhoffschen Sätze sind die Basis der Schaltungsanalyse in der NMR-Elektronik
+            \end{itemize}
+    \end{enumerate}
 
 
 \newpage
@@ -163,72 +476,229 @@
 
 \subsection{Benötigte Materialien}
     \begin{enumerate}[label=\arabic*.]
-        \item Eins
-        \item Zwei
+        \item NMR-Betriebsgerät
+        \item NMR-Versorgungseinheit
+        \item U-Magnetkern mit Aufsatz
+        \item Spuel 10A, 480 Windungen
+        \item DC-Spannungsquelle 0...16V, 0...5A
+        \item Analog-Oszilloskop HM 507
+        \item BNC-Kabel 1m
+        \item geschirmtes BNC-Kabel
+        \item Sicherheitsverbundungskabel, 50cm, rot
+        \item Sicherheitsverbindungskabel, 100cm, rot
+        \item SIcherheitsverbindungskabel, 100cm, blau
+        \item Universal-Physik-Messgerät
+        \item Combi B-Sensor S
+        \item Verlängerungskabel, 15-polig
     \end{enumerate}
 
 \newpage
 
-\subsection{Teilversuch 1: Bragg-Reflexion von Röntgenstrahlung des Molybdän an einem NaCl-Eiskristall}
+\subsection{Teilversuch 1: NMR an flüssigen und festen Proben mit Protonen}
 \begin{enumerate}[label = (\Roman*)]
-    \item Ziel: ...
+    \item Ziel: Bestimmen der Kerspinresonanzfrequenzen einzelner Proben
     
-    \item Versuchsmethode: ...
+    \item Versuchsmethode: Demonstrieren der Kernspinresonant einer Glyzerin-, sowie einer Wasser- und einer Polystyrolprobe
     
     \item Versuchsskizze:
     
         \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\linewidth]{Bild}
+        \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
         \caption{Versuchsskizze Teilversuch 1}
         \end{figure}
 
     \item Planung der Durchführung
         \begin{itemize}
-            \item eins
-            \item zwei
+            \item Geräteeinstellung: Lissajous-Figuren sollen am Oszilloskop dargestellt werden. Einstellen einer Frequenz von circa 19MHz
+            \item Einsetzen der Glyzerin-Probe so, dass sie sich in der Mitte der Messkammer befindet
+            \item Strom durch die beiden 10A Spulen so lange erhöhren, bis das MNR-A Signal auf dem Oszilloskopbild erkennbar wird (wenn kein Signal findbar, dann ist die Amplitude am Oszillator ungünstig eingestellt) 
+            \item Je kleiner Amplitude, umso ausgeprägter ist Resonanzsignal, aber auch Rauschen
+            \item Resonanzkurve ausdrucken und mit den notwendigen Daten beschriften
         \end{itemize}
 
     \item Vorüberlegungen zur Durchführung \& Auswertung
         \begin{itemize}
-            \item eins
-            \item zwei
+            \item Bis TV5 soll das B-Feld nicht mehr verändert werden! Optimieren des Bildes auf dem Oszilloskop mit verschiedenen Parametern
+            \item Mittels Drehknopf Phase kann das positive Signal mit dem negativen Signal zur Deckung gebracht werden
         \end{itemize}
-    
 \end{enumerate}
 
 \newpage
 
-\subsection{Teilversuch 2: Energiespektrum einer Röntgenröhre in Abhängigkeit der Spannung}
+\subsection{Teilversuch 2: NMR an einer festen Probe mit Fluorkernen}
 \begin{enumerate}[label = (\Roman*)]
-    \item Ziel: 
+    \item Ziel: Vergleich der Messung einer festen Probe mit Fluorkernen mit den Ergebnissen aus Teilversuch 1
     
-    \item Versuchsmethode: 
+    \item Versuchsmethode: Messen der Resonanzkurve des Spins des Fluorkerns
     
     \item Versuchsskizze:
     
         \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\linewidth]{Bild}
+        \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
         \caption{Versuchsskizze Teilversuch 2}
         \end{figure}
 
     \item Planung der Durchführung
         \begin{itemize}
-           \item eins
-           \item zwei
+           \item Geräteeinstellung: Lissajous-Figuren sollen am Oszilloskop dargestellt werden. Einstellen einer Frequenz von circa 19MHz
+            \item Einsetzen des Fluorkerns so, dass sie sich in der Mitte der Messkammer befindet
+            \item Strom durch die beiden 10A Spulen so lange erhöhren, bis das MNR-A Signal auf dem Oszilloskopbild erkennbar wird (wenn kein Signal findbar, dann ist die Amplitude am Oszillator ungünstig eingestellt) 
+            \item Je kleiner Amplitude, umso ausgeprägter ist Resonanzsignal, aber auch Rauschen
+            \item Resonanzkurve ausdrucken und mit den notwendigen Daten beschriften
         \end{itemize}
 
     \item Vorüberlegungen zur Durchführung \& Auswertung
         \begin{itemize}
-            \item eins
-            \item zwei
+            \item Bis TV5 soll das B-Feld nicht mehr verändert werden! Optimieren des Bildes auf dem Oszilloskop mit verschiedenen Parametern
+            \item Mittels Drehknopf Phase kann das positive Signal mit dem negativen Signal zur Deckung gebracht werden
         \end{itemize}
         
 \end{enumerate}
 
 
 \newpage
+
+\subsection{Teilversuch 3: Bestimmung der Resonanzbreite}
+\begin{enumerate}[label = (\Roman*)]
+    \item Ziel: Bestimmen der Resonanzbreite
+    
+    \item Versuchsmethode: Bestimmen der Halbwertsbreite der Resonanzlinie von verschiedenen Kernen
+    
+    \item Versuchsskizze:
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
+        \caption{Versuchsskizze Teilversuch 2}
+        \end{figure}
+
+    \item Planung der Durchführung
+        \begin{itemize}
+           \item Zunächst die PTFE-Probe verwenden
+           \item Nachdem Resonanz gefunden wurde, durchführen einer Kalibrierung der x-Achse des Ozilloskops (auf MHz)
+           \item Verschieben des Peaks der Resonanz durch Verändern der Frequenz (dabei soll der volle Skalenteil auf dem Bildschirm sein); Frequenz notieren
+           \item Anschließend Peak zu einem anderen Skalenteil verschieben und Frequenz notieren
+           \item Dadurch Kalibirierung der x-Ablenkung in MHz/Div durchführbar
+           \item Vermessen die FWHM in Einheiten des Ozilloskopschirms
+           \item Berechnen von der FWHM in Einheiten der Frequenz
+           \item Wiederholen der MEssung für Glyzerin, Wasser und Polysyrol (Ausruck für TV1 verwenden)
+        \end{itemize}
+
+    \item Vorüberlegungen zur Durchführung \& Auswertung
+        \begin{itemize}
+            \item Ergebnisse der einzelnen Materialien vergleichen
+            \item Unsicherheiten nicht vergessen
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\newpage
+
+\subsection{Teilversuch 4: Anwendungen in der Chemie (NMR-Skektroskopie)}
+\begin{enumerate}[label = (\Roman*)]
+    \item Ziel: Wasserstoffgehalt unterschiedlicher Proben bestimmen
+    
+    \item Versuchsmethode: Durch Referenzmessungen mit bekannten Proben Bestandteile in einer Creme herausfinden
+    
+    \item Versuchsskizze:
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
+        \caption{Versuchsskizze Teilversuch 2}
+        \end{figure}
+
+    \item Planung der Durchführung
+        \begin{itemize}
+           \item Ein Proberörchen mit Creme füllen und Probe in Messkammer positionieren
+           \item Resonanzsignal suchen
+           \item Aussage über Bestandteile der Probe treffen (Materialien aus TV1 verwenden und vergleichen)
+           \item Ergebnis ausdrucken und Messwerte notieren
+        \end{itemize}
+
+    \item Vorüberlegungen zur Durchführung \& Auswertung
+        \begin{itemize}
+            \item Rörchen vor Verscuh gründlich reinigen, damit nur Creme gemessen wird
+            \item Zu untersuchende Probe muss genau in Mitte der Messkammer sein
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\newpage
+
+\subsection{Teilversuch 5: Bestimmung des $g$-Faktors}
+\begin{enumerate}[label = (\Roman*)]
+    \item Ziel: Bestimmen des $g$-Faktors
+    
+    \item Versuchsmethode: Der $g$-Faktor für Wasserstoffkerne und Fluorkerne wird mit Hilfe der Kernspinresonanz und eines Teslameters bestimmt
+    
+    \item Versuchsskizze:
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
+        \caption{Versuchsskizze Teilversuch 2}
+        \end{figure}
+
+    \item Planung der Durchführung
+        \begin{itemize}
+           \item Magnetische FLussdichte im Inneren der Messkammer mit B-Feld-Sonde bestimme (maximal gemessenen Wert notieren)
+           \item Sonde mit Stativ fixieren und Magnetfeld tangential zur Messkammer an der Stelle mit maximalem Wert messen
+           \item Kalibrieren des tangentialen Messpunkts
+           \item Einsetzen der Glyzerin-Probe
+           \item Frequenzen für verschiedene Frequenzen des RF-Oszillators einstellen, die für Resonanz notwending sind
+           \item Jeweiligen Werte des Teslametees notieren
+           \item Messung wiederholen für Wasser und Teflon
+        \end{itemize}
+
+    \item Vorüberlegungen zur Durchführung \& Auswertung
+        \begin{itemize}
+            \item Kalibrierfeaktor berechnen und mit Messwerten das Feld im Inneren der Kammer bestimmen
+            \item Diagramm erstellen und $g$-Faktoren bestimmen
+            \item Mit Literaturwerten vergleichen
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\newpage
+
+\subsection{Teilversuch 6: Modellversuch zum Spin}
+\begin{enumerate}[label = (\Roman*)]
+    \item Ziel: Spinflip erzeugen
+    
+    \item Versuchsmethode: Analogie zwischen Spin und Kreisel anhand eines Kugelkreisels demonstrieren
+    
+    \item Versuchsskizze:
+    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/TV6.jpeg}
+        \caption{Versuchsskizze Teilversuch 2}
+        \end{figure}
+
+    \item Planung der Durchführung
+        \begin{itemize}
+           \item Modellversuch zum Spin
+           \item Durch geschicktes Umpolen von Magnetfeld Spinflip erzeugen
+           \item Beobachtungen notieren
+        \end{itemize}
+
+    \item Vorüberlegungen zur Durchführung \& Auswertung
+        \begin{itemize}
+            \item Beobachtungen analysieren und beschreiben
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\newpage
+
+\iffalse
 
 \section{Versuchsprotokoll}
 
@@ -245,9 +715,30 @@ Alle weiteren Rechnungen und Analysen finden in der Versuchsasuwertung statt.
 
 \section{Auswertung}
 
-    \subsection{Teilversuch 1: Bragg-Reflexion von Röntgenstrahlung des Molybdän an einem NaCl-Eiskristall}
+\subsection{Teilversuch 1: NMR an flüssigen und festen Proben mit Protonen}
 
-    \newpage
+\newpage
+
+\subsection{Teilversuch 2: NMR an einer festen Probe mit Fluorkernen}
+
+\newpage
+
+\subsection{Teilversuch 3: Bestimmung der Resonanzbreite}
+
+\newpage
+
+\subsection{Teilversuch 4: Anwendungen in der Chemie (NMR-Spektroskopie)}
+
+\newpage
+
+\subsection{Teilversuch 5: Bestimmung des $g$-Faktors}
+
+\newpage
+
+\subsection{Teilversuch 6: Modellversuch zum Spin}
+
+\newpage
+
 
 \section{Anmerkung: Graphische Auswertung und Fehlerfortpflanzung mit Python-Code}
 
@@ -257,12 +748,13 @@ vermeiden. Alle Ergebnisse, die auf diese Weise zustande gekommen sind,
 sind entsprechend mit einem \colorbox{codebg}{blauen Hintergrund} gekennzeichnet;
 s. folgendes Beispiel:
 \[
-    F \wideeq ma \wideeq \result{20}{kg} \cdot 9,81 \, \frac{\text m}{\text s^2}
-    \wideeq \result{(19,62 \pm 0,5)}{N} \coderef{tv1}
+    F \wideeq ma \wideeq \qty{20}{\kg} \cdot \qty{9.81}{\meter\per\square\second}
+    \wideeq \qty{19.6 \pm 0.5}{\newton} \quad \coderef{tv1}
 \]
 Dies soll bedeuten, dass die Berechnung des Wertes und der Unsicherheit von der
 Python-Funktion namens \verb|tv1| durchgeführt wird.
-Die Unsicherheit wird mithilfe der Gauß'schen Fehlerfortpflanzung berechnet.
+Die Unsicherheit wird - sofern nicht anders angegeben - mithilfe der Gauß'schen
+Fehlerfortpflanzung berechnet.
 Außerdem wird das Python-Package \texttt{matplotlib} zum Erstellen
 von Graphen verwendet.
 
@@ -277,15 +769,17 @@ Stellen unvollständig erscheinen. Auf GitHub wird aber alles richtig angezeigt.
 \newpage
 
 
-\verb|Main.py|:
-\lstinputlisting[language=Python]{Code/Main.py}
+\verb|main.py|:
+\lstinputlisting[language=Python]{Code/main.py}
 \newpage
 
-\verb|Expressions.py|:
-\lstinputlisting[language=Python]{Code/Expressions.py}
+\verb|expressions.py|:
+\lstinputlisting[language=Python]{Code/expressions.py}
 \newpage
 
 Output:
-\lstinputlisting{Code/Output.txt}
+\lstinputlisting{Code/output.txt}
+
+\fi
 
 \end{document}
