@@ -1,0 +1,25 @@
+--- Teilversuch 3 ---
+df =     2.63e+04, Unsicherheit =        141.4
+s =         8767, Unsicherheit =        113.6
+PTFE
+FWHM =         7671, Unsicherheit =        240.6
+Glycerin
+FWHM =         3068, Unsicherheit =        222.7
+Polystyrol
+FWHM =        876.7, Unsicherheit =        45.28
+Wasser
+FWHM =         1403, Unsicherheit =        47.45
+--- Teilversuch 5 ---
+Kalibrierfaktor =        1.632
+Glycerin
+m =    4.488e+07, Unsicherheit =    1.465e+05
+b =    5.227e+04, Unsicherheit =     5.68e+04
+g =        5.887, Unsicherheit =      0.01922, Abweichung = 15.69 = 5.4%
+Wasser
+m =    4.591e+07, Unsicherheit =     3.92e+05
+b =   -3.458e+05, Unsicherheit =    1.574e+05
+g =        6.023, Unsicherheit =      0.05142, Abweichung = 8.50 = 7.8%
+PTFE
+m =    4.291e+07, Unsicherheit =    3.567e+05
+b =   -2.748e+05, Unsicherheit =    1.527e+05
+g =        5.629, Unsicherheit =       0.0468, Abweichung = 7.94 = 7.1%
