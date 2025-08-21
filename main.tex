@@ -494,6 +494,7 @@ gilt hier $\Delta l = 0, \pm 2$.
 
 \newpage
 
+
 \subsection{Teilversuch 1: NMR an flüssigen und festen Proben mit Protonen}
 \begin{enumerate}[label = (\Roman*)]
     \item Ziel: Bestimmen der Kerspinresonanzfrequenzen einzelner Proben
@@ -571,7 +572,7 @@ gilt hier $\Delta l = 0, \pm 2$.
         \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
-        \caption{Versuchsskizze Teilversuch 2}
+        \caption{Versuchsskizze Teilversuch 3}
         \end{figure}
 
     \item Planung der Durchführung
@@ -608,7 +609,7 @@ gilt hier $\Delta l = 0, \pm 2$.
         \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
-        \caption{Versuchsskizze Teilversuch 2}
+        \caption{Versuchsskizze Teilversuch 4}
         \end{figure}
 
     \item Planung der Durchführung
@@ -641,7 +642,7 @@ gilt hier $\Delta l = 0, \pm 2$.
         \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\linewidth]{Abbildungen/TV1-5.jpeg}
-        \caption{Versuchsskizze Teilversuch 2}
+        \caption{Versuchsskizze Teilversuch 5}
         \end{figure}
 
     \item Planung der Durchführung
@@ -678,7 +679,7 @@ gilt hier $\Delta l = 0, \pm 2$.
         \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\linewidth]{Abbildungen/TV6.jpeg}
-        \caption{Versuchsskizze Teilversuch 2}
+        \caption{Versuchsskizze Teilversuch 6}
         \end{figure}
 
     \item Planung der Durchführung
@@ -695,10 +696,7 @@ gilt hier $\Delta l = 0, \pm 2$.
         
 \end{enumerate}
 
-
 \newpage
-
-\iffalse
 
 \section{Versuchsprotokoll}
 
@@ -709,7 +707,7 @@ wurde sie klar gekennzeichnet.
 Messunsicherheiten wurden angegeben und folgend in der Auswertung verwendet.
 Alle weiteren Rechnungen und Analysen finden in der Versuchsasuwertung statt.
 
-\includepdf[pages={...}, pagecommand={\thispagestyle{scrheadings}}, frame=true]{[Name.pdf]]}
+\includepdf[pages={1-18}, pagecommand={\thispagestyle{scrheadings}}, frame=true]{Protokoll.pdf}
 
 \newpage
 
@@ -717,25 +715,267 @@ Alle weiteren Rechnungen und Analysen finden in der Versuchsasuwertung statt.
 
 \subsection{Teilversuch 1: NMR an flüssigen und festen Proben mit Protonen}
 
+Vergleicht man die Graphen der unterschiedlichen Proben miteinander so fällt auf, dass die Peaks unterschiedliche Ausschläge haben. Diese sind in folgender Skizze eingezeichnet:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/VergleichGraphenTV1.jpeg}
+        \caption{Vergleich der Resonnzkurven aus Teilversuch 1}
+    \end{figure}
+
+Der größte Peak ist bei Glycerin zu beobachtem, dann bei Wasser und der kleinste Peak bei Polystyrol. Die unterschiedlichen Peaks lassen sich durch die unterschiedlichen Protonendichten erklären. Eine höhere Protonendichte führt dabei zu einem stärkeren Signal, was sich in einem größen Peak widerspiegelt. Zudem geht eine höhere Protonendichte immer mit mehr Wassermolekülen, oder anderen protonenhaltigen Vrebindungen, einher (führt zu einem stärkeren Signal). 
+
+Als lässt sich also folgern, dass Glyzerin die größte Protonendichte hat, gefolgt von Wasser und Polystyrol. Polystyrol ist im Vergleich zu den anderen beiden ein Festkörper, was zusätzlich eine schlechtere Beweglichkeit der Spins zur Folge hat.
+
+Anwendung findet dieser Effekt in der Medizin. Hier spielt das Protonendichte-gewichtete MRT eine elementare Rolle, bei welchem Gewebe mit hoher Protonendichte heller erscheint, als andere. \cite{doc}
+
+Desweiteren lässt sich festellen, dass die Breite der unterschiedlichen Peaks nahezu indentisch ist. Die Relaxationszeiten der unterschiedlichen Stoffe, Proben, sind also nahezu identisch. Nahezu identisch sind auch die Resonanzfrequenzen: 
+\begin{enumerate}
+    \item Resonanzfrequenz Gylcerin: $f_G= \qty{19.0168}{MHz}$
+    \item Resonanzfrequenz Polystyrol: $f_P=\qty{19.0195}{MHz}$
+    \item Resonanzfrequenz Wasser: $f_W=\qty{19.0264}{MHz}$
+\end{enumerate}
+Daraus lässt sich darauf schließen, dass die Resonanzfrequenz nur vom angelegten Magnetfeld und der Kernart abhängt. Aus diesem Grund sollte man auch bis Teilversuch 5 das Magnetfeld nicht mehr verändern, um ähnliche Zustände zu ermöglichen.
+
+Auch wenn die Spektren auf den ersten Blick sehr ähnlich wirken, unterscheiden sich diese, wie ersichtlich, in einigen Details, wodurch man viele Rückschlüsse ziehen kann, vor allem auch in der Medizin (MRT - Früherkennung von Krebs). NMR spielt also eine neben der Physik auch in der Medizin eine wichtige Rolle. 
+
 \newpage
 
 \subsection{Teilversuch 2: NMR an einer festen Probe mit Fluorkernen}
+
+Vergleicht man nun die Resonanzkurve von Teflon mit den Resonanzkurven aus Teilversuch 1, so lässt sich als erste Beobachtung festhalten, dass die Resonanzkurve von Teflon lediglich einen Peak in negative y-Richtung hat.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/VergleichGraphenTV2.jpeg}
+        \caption{Vergleich der Resonnzkurve von Teflon mit den Resonanzkurven aus Teilversuch 1}
+    \end{figure}
+
+Dieser Effekt tritt auf, da PTFE keine Protonen besitzt, sondern Fluor-Atome. Diese verhalten sich, wie ersichtlich anders als Protonen. Es reagieren also lediglich die Fluorkerne.
+
+Zudem war die Resonazfrequenz von PTFE deutlich geringer als beispielsweise die Resonanzfrequenz von Wasser $f_\text{PTFE} = \qty{17.8339}{MHz} < f_W$. Dies lässt sich durch die Eigenschaft der Fluorkerne erklären, da diese eine starke Elektronegativität aufweisen. 
+
+Die Fluor-Kernspinresonanzspektroskopie hat sich zudem als spektroskopische Methode entwickelt, um fluorierte Verbindungen zu analysieren. Wie uns auch während des Versuchs ersichtlich wurde, war das Resonanzspektrum sehr empfindlich auf Veränderungen. Dadruch erreicht man eine starke Aussagekraft über die chemische Verschiebungen, wodurch sich viele Aussagen über die chemische Umgebung von Fluor treffen lassen. Medizin und Chemie greifen hierauf gerne zurück. \cite{ww}
 
 \newpage
 
 \subsection{Teilversuch 3: Bestimmung der Resonanzbreite}
 
+Die Halbwertsbreiten wurden bereits im Protokoll berechnet, jedoch ohne Unsicherheiten. 
+Im Folgenden werden jedoch alle Werte nochmal mit Python, inklusive der Unsicherheiten
+berechnet. Die händisch berechneten Werte sind im Protkoll
+unter Teilversuch 3 einzusehen.
+
+Um die Halbwertsbreite der Resonanzpeaks zu bestimmen, muss zunächst
+die Skalierung der x-Achse des Oszilloskops gefunden werden.
+Dies wurde durch eine Verschiebung des Resonanzpeaks von PTFE durchgeführt.
+6 divisions (Divs) am Oszilloskop entsprachen einer Frequenzdifferenz
+von $\Delta f = \qty{26.3}{kHz}$. Bei einer Skalierung von \qty{500}{mV / Div}
+entspricht dies einem Umrechungsfaktor von
+$s = \qty{2.192 \pm 0.029}{\kilo\hertz\per Div}$ (\coderef{tv3}).
+Mit diesem Faktor können die vom Oszilloskop abgelesenen
+Halbwertsbreiten in Frequenzen umgerechnet werden. Dafür ergeben sich folgende Werte:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|ccc}
+        Probe & Halbwertsbreite [Div] & Osz. Skala [\unit{mV / Div}]
+        & Halbwertsberite [\unit{kHz}] \\
+        \hline
+        PTFE & \num{1.75 \pm 0.05} & \num{500} & \num{7.67 \pm 0.25} \\
+        Glycerin & \num{0.70 \pm 0.05} & \num{500} & \num{3.07 \pm 0.23} \\
+        Posystyrol & \num{1.00 \pm 0.05} & \num{100} & \num{0.88 \pm 0.05} \\
+        Wasser & \num{1.60 \pm 0.05} & \num{100} & \num{1.40 \pm 0.05}
+    \end{tabular}
+    \caption{Halbwertsbreiten der Resonanzpeaks der vier untersuchten Substanzen
+    (\coderef{tv3})}
+    \label{table_tv3}
+\end{table}
+
+An dieser Stelle ist anzumerken, dass für die Berechnungen vor Ort ein falscher
+Umrechnungsfaktor verwendet wurde und sich deswegen diese Ergebnisse von den
+vor Ort berechneten unterscheiden.
+Für PTFE und Glycerin ist die Unsicherheit um einiges kleiner als für
+Polystyrol und Wasser, weil für die letzten beiden eine größerer Zoom am Oszilloskop
+gewählt wurde, wodurch die Divisions feiner wurden und somit die absolute Unsicherheit
+(welche immer $1 / 20$ Div beträgt), kleiner.
+
+Für die Vermessung der FWHM wurde jeweils nur der untere Peak des Resonanzspektrums
+verwendet, weil dieser Peak mehr gaußförmig war als der obere.
+Insgesamt war der obere Peak meist etwas breiter als der untere. Hätte man
+die Halbwertsbreite also an diesem vermessen, wären vermutlich größere
+Werte herausgekommen.
+
+Beim Vergleich der Werte untereinander fällt auf, dass PTFE mit Abstand die größte
+Halbwertsbreite hat. Das liegt wahrscheinlich daran, dass bei PTFE die Flourkerne
+für die Resonanz sind, während es bei den anderen drei Proben die Wasserstoffkerne
+sind. Aufgrund von unterschiedlichen Eigenschaften dieser Kerne, der Atome
+und eventuell auch der chemischen Eigenschaften zeigen sie hier ein unterschiedliches
+Verhalten. Auch die drei wasserstoffbasierten Substanzen unterscheiden sich
+ziemlich stark in ihren Halbwertsbreiten. Hier könnten ebenfalls die verschiedenen
+chemischen Eigenschaften der Moleküle bzw. die verschiedenen chemischen
+Umgebungen der Wasserstoffatome verantwortlich sein.
+
+
 \newpage
 
 \subsection{Teilversuch 4: Anwendungen in der Chemie (NMR-Spektroskopie)}
+
+Vergleicht man den Garphen aus Teilversuch 4 (Handcreme) mit den Graphen aus Teilversuch 1, so kann man die Inhaltsstoffe der Handcreme analysieren. Untenstehend wird der Graph der Handcreme nochmal mit den Graphen aus Teilversuch 1 aufgeführt:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{Abbildungen/VergleichGraphenTV4.jpeg}
+        \caption{Vergleich des Graphen der Handcreme mit den Graphen der Proben aus Teilversuch 1}
+    \end{figure}
+
+Betrachtet man nun die Graphen, so lässt sich festellen:
+\begin{enumerate}
+    \item Ähnlichkeit zum Graphen von Glyzerin; Ausschlag in positive und negative y-Richtung
+    \item Ähnlichkeit zum Graphen von Wasser; Ausschlag auch in beide Richtungen, aber Ausschlag in negative y-Richtung ist größer
+    \item Auch leichte Ähnlichkeit zum Graphen von Polystyrol. Ist aber sinnlos (Begründung untenstehend)
+\end{enumerate}
+
+Aufgrund der Ähnlichkeit der Spektren lässt sich darauf schließen, dass die Handcreme aus den Stoffen Wasser und Glycerin besteht. Recherchiert man zusätzlich im Internet, findet man Heraus, dass Wasser und Glycerin zwei der Hauptbestandteile einer Handcreme sind. Dabei fungiert Wasser als Lösungsmittel für alle anderen Bestandteile. Glycerin wirkt feuchtigkeitsspended und bindet Wasser, damit eine homogene Creme entsteht.
+
+Polystyrol lässt sich in Bezug auf die Sinnhaftigkeit in einer Creme ausschließen. Dieser Stoff ist in einer Handcreme nicht enthalten.
+
+Mittels der Spektren lassen sich also Wasser und Gylcerin als Bestandteile der Handcreme-Probe analysieren, beziehungsweise verifizieren.
+
+\cite{cc}
 
 \newpage
 
 \subsection{Teilversuch 5: Bestimmung des $g$-Faktors}
 
+Zunächst müssen aus den Werten des B-Feldes direkt außerhalb der Spule, die mit der
+B-Feld-Sonde gemessen wurden, in die Magnetfeldstärken innerhalb der Spule berechnet
+werden. Der Kalibrierungsfaktor $c$ ergibt sich aus der ersten Messung des B-Feldes
+innerhalb ($B_\text{innen}$) und außerhalb ($B_\text{außen}$)
+der Messkammer (ohne Probe):
+\[
+    c \wideeq \frac{B_\text{innen}}{B_\text{außen}} \wideeq \num{1.632}
+    \quad \coderef{tv5}
+\]
+Damit kann aus unseren Messwerten ($B_\text{gemessen}$) das tatäschliche
+Magnetfeld am Ort der Probe berechnet werden:
+\[
+    B_0 \wideeq c B_\text{gemessen}
+\]
+
+Zwischen der Frequenz der RF-Spule und dem Magnetfeld besteht der Zusammenhang
+\[
+    \nu \wideeq \frac{g \mu_N}{h} \cdot B_0
+\]
+Trägt man also die gemessene Frequenz gegen die berechneten Magnetfeldstärken
+auf, so liegen die Datenpunkte auf einer Gerade mit Steigung $g \mu_N / h$.
+Abbildungen \ref{graph_tv5_glycerin}, \ref{graph_tv5_water} und \ref{graph_tv5_ptfe}
+zeigen diese Diagramme für Glycerin, Wasser bzw. Polytetraflourethylen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Abbildungen/Graph_TV5_Glycerin.pdf}
+    \caption{$B$-$\nu$-Diagramm für Glycerin (\coderef{tv5})}
+    \label{graph_tv5_glycerin}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Abbildungen/Graph_TV5_Wasser.pdf}
+    \caption{$B$-$\nu$-Diagramm für Wasser (\coderef{tv5})}
+    \label{graph_tv5_water}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Abbildungen/Graph_TV5_PTFE.pdf}
+    \caption{$B$-$\nu$-Diagramm für Polytetraflourethylen (\coderef{tv5})}
+    \label{graph_tv5_ptfe}
+\end{figure}
+
+In jeder der drei Messreihen liegen die Punkte schön auf einer Gerade, sodass
+die Steigung $m$ der Ausgleichsgerade mit guter Genauigkeit berechnet werden kann.
+Daraus kann der jeweilige $g$-Faktor der Probe berechnet werden:
+\[
+    g \wideeq m \frac{h}{\mu_N}
+    \wideeq m \frac{h}{e \hbar / (2 m_p)}
+    \wideeq m \frac{4 \pi m_p}{e}
+\]
+
+In Tabelle \ref{tabelle_tv5} sind für jede der drei Proben die Werte
+der Parameter der Ausgleichsgerade ($m$ und $b$), der daraus berechnete $g$-Faktor
+und der Literaturwert für den $g$-Faktor angegeben.
+Beim Literaturwert wurde für Glycerin und Wasser der von Wassertoff
+($g = 5.5856912$) und für PTFE der von Flour ($g = 5.257723$)
+verwendet (Quelle: Skript zur Vorbereitung), weil Glycerin und Wasser
+Wasserstoff enthalten, während PTFE kein Wasserstoff, aber dafür Flour enthält.
+Zusätzlich ist in der rechten Spalte die Abweichung des experimentell
+bestimmten Wertes vom Literaturwert sowohl in Prozent als auch in Vielfachen
+der Unsicherheit ($\sigma$) angegeben.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|cccc}
+        \multirow{2}{*}{Probe}
+        & \multicolumn{2}{c}{Fitparameter}
+        & \multirow{2}{*}{$g$ (berechnet)}
+        % & \multirow{2}{*}{$g$ (Literaturwert)}
+        & \multirow{2}{*}{Abweichung} \\
+        & $m$ [\unit{\hertz\per\tesla}] & $b$ [\unit{\hertz}] & & \\
+        \hline
+        Glycerin & \num{4.488 \pm 0.015 e7} & \num{5 \pm 6 e4}
+        & \num{5.887 \pm 0.020}
+        % & \num{5.5856912}
+        & $\qty{5.4}{\percent} \approx \num{15.69} \sigma$ \\
+        Wasser & \num{4.59 \pm 4 e7} & \num{-3.458 \pm 0.016 e7}
+        & \num{6.02 \pm 0.06}
+        % & \num{5.5856912}
+        & $\qty{7.8}{\percent} \approx \num{8.50} \sigma$ \\
+        PTFE & \num{4.29 \pm 0.04 e7} & \num{-2.7 \pm 1.6 e5}
+        & \num{5.63 \pm 0.05}
+        & $\qty{7.1}{\percent} \approx \num{7.94} \sigma$
+    \end{tabular}
+    \caption{Experimentell bestimmte $g$-Faktoren (\coderef{tv5})}
+    \label{tabelle_tv5}
+\end{table}
+
+Zunächst ist festzustellen, dass die Werte für den $g$-Faktor von Glycerin
+und Wasser sehr nahe beieinanderliegen. Das ist zu erwarten, da bei beiden
+Substanzen die Kernspinresonanz von den in den Molekülen vorhandenen H-Atomen
+kommt. PTFE hat von den drei Substanzen den niedrigsten $g$-Faktor,
+was aufgrund des hohen Anteils von Flouratomen in PTFE ebenfalls zu erwarten ist.
+
+Beim Vergleich mit den Literaturwerten fällt jedoch auf, dass unsere experimentell
+ermittelten Werte weit von diesen entfernt liegen. Alle drei unterscheiden sich
+signifikant von den Literaturwerten.
+Insbesondere sind alle drei ermittelten Werte größer als die theoretisch erwarteten.
+Dies könnte auf einen systematischen Fehler im Versuchsaufbau oder der Auswertung
+hindeuten. Beispielsweise könnte die ursprüngliche Messung des Magnetfeldes
+im Inneren der Messkammer zu niedrig gemessen worden sein.
+Dadurch würde die Steigung der Ausgleichsgeraden und damit die $g$-Faktoren
+zu hoch berechnet werden, was den Fehler (zumindest teilweise) erklären würde.
+
+
 \newpage
 
 \subsection{Teilversuch 6: Modellversuch zum Spin}
+
+Da bei diesem Versuch nur qualitative Beobachtungen getroffen werden, ist keine Berechnung bei der Auswertung notwendig. Die getroffenen Beobachtungen werden im Folgenden noch einmal beschrieben und physikalisch erklärt. Man konnte beobachten, dass sich die Billiardkugel reibungslos dreht und sich entlang des Magnetfelds ausrichtet. Die Ausrichtungslage der Kugel ist hierbei abhängig von der Schalterstellung und beträgt $\pm\ang{45}$ gegenüber der statischen Spulenpaare. 
+
+Durch geeignetes Umschalten des Magentfeldes war es nun möglich, die Präzessionsamplitude immer weiter zu vergrößern, bis die Kugel schließlich flipt.
+
+Da dies ein Modellversuch ist, entsprechen die einzelnen Komponenten physikalischen Eigenschaften:
+\begin{itemize}
+    \item Die Richtung der Kugelbewegung beschreibt den eigentlichen Spin
+    \item Die Ruhelage der Kugel beschreibt den stabilen Spin-Zustand
+    \item Erreicht man schließlich die entgegengesetzte Lage der Kugel entspricht dies dem Spin-Flip
+    \item Das magentische Moment des Kerns wird beschrieben durch die Kugel im Spulenfeld
+    \item Das Hochfrequenzfeld, welches den Spin flipt wird durch die wechselnden Ströme in den Spulen, welche due Kugel anregen, dargestellt
+\end{itemize}
+
+Die Kugel flipt also, da das oszillierende Magnetfeld im Resonanzfall die richtige Menge an Energie zuführt.
+
+Abschließend lässt sich noch festhalten, dass dieser Versuch den Spin nur modellhaft darstellen beziehungsweise veranschaulichen kann und nicht die Realität darstellt, da in Wirklichkeit ein quantisierter Zwei-Stunstand-Flip stattfindet.
 
 \newpage
 
@@ -779,7 +1019,5 @@ Stellen unvollständig erscheinen. Auf GitHub wird aber alles richtig angezeigt.
 
 Output:
 \lstinputlisting{Code/output.txt}
-
-\fi
 
 \end{document}
